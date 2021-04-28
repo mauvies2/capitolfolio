@@ -1,0 +1,15 @@
+@api = http://localhost:5000
+
+GET {{api}}/savings
+
+###
+GET {{api}}/savings/1
+
+###
+POST {{api}}/savings
+
+###
+DELETE {{api}}/savings/1
+
+###
+PUT {{api}}/savings/1
