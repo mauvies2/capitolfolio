@@ -1,15 +1,29 @@
 @api = http://localhost:5000
 
+### Get all savings
 GET {{api}}/savings
 
-###
-GET {{api}}/savings/1
+### Get a single saving
+GET {{api}}/savings/608d3eb3a928f33c171a8f7f
 
-###
+### Create saving
 POST {{api}}/savings
+Content-Type: application/json
 
-###
-DELETE {{api}}/savings/1
+{
+    "type": "cash",
+    "description": "some cash",
+    "amount": 600,
+    "currency": "USD"
+}
 
-###
-PUT {{api}}/savings/1
+### Delete saving
+DELETE {{api}}/savings/608d3eb7a928f33c171a8f80
+
+### Update saving
+PUT {{api}}/savings/608d443b5f572f417ff13bf1
+Content-Type: application/json
+
+{
+    "amount": 200
+}
