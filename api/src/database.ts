@@ -1,7 +1,6 @@
 import mongoose, { ConnectOptions } from 'mongoose'
 import config from './config/default'
 
-
 (async () => {
     try {
         const mongooseOptions: ConnectOptions = {
@@ -16,3 +15,5 @@ import config from './config/default'
         console.log(error)
     }
 })()
+
+
