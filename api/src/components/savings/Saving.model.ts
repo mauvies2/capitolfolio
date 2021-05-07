@@ -1,6 +1,6 @@
 import { Schema, model } from 'mongoose'
 
-const savingsSchema = new Schema({
+const savingSchema = new Schema({
     type: {
         type: String,
         required: true,
@@ -26,4 +26,4 @@ const savingsSchema = new Schema({
     timestamps: true
 })
 
-export default model('Savings', savingsSchema)
+export default model('Saving', savingSchema)

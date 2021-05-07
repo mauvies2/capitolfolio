@@ -1,4 +1,5 @@
 import { RequestHandler } from 'express'
+
 import Saving from './Saving.model'
 
 export const getSavings: RequestHandler = async (req, res) => {
@@ -24,8 +25,7 @@ export const createSavings: RequestHandler = async (req, res) => {
     try {
         const saving = new Saving(req.body)
         const savedSaving = await saving.save()
-        console.log('The following saving was created and saved:', savedSaving)
-        res.json(savedSaving)
+        return res.json(savedSaving)
     } catch (error) {
         throw new Error("saving was not registered")
     }
