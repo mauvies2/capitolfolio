@@ -1,5 +1,7 @@
 @api = http://localhost:5000
 
+# SAVINGS
+
 ### Get all savings
 GET {{api}}/savings
 
@@ -27,3 +29,51 @@ Content-Type: application/json
 {
     "amount": 200
 }
+
+
+# USERS
+
+### Get all users
+GET {{api}}/users
+
+### Get a single user
+GET {{api}}/users/60904fbb255d65760cd8afed
+
+### Register user
+POST {{api}}/users
+Content-Type: application/json
+
+{
+    "name": "mau",
+    "surname": "vie",
+    "email": "mauricio.viera@trioteca.com",
+    "password": "12345",
+    "role": "admin"
+}
+
+### Login user
+POST {{api}}/users/login
+Content-Type: application/json
+
+{
+    "email": "mauricio.vie@trioteca.com",
+    "password": "12345"
+}
+
+### Delete user
+DELETE {{api}}/users/609047c7f40cf372d2cc5762
+
+### Update user
+PUT {{api}}/users/609046988b5b7e72582be095
+Content-Type: application/json
+
+{
+    "name": "hola"
+}
+
+
+
+### Dashboard
+GET {{api}}/dashboard
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibWF1IiwiaWQiOiI2MDkwNGZiYjI1NWQ2NTc2MGNkOGFmZWQiLCJpYXQiOjE2MjA0MjU1ODB9.D-sz0obvt71U5WxzKDhpfaf9MBT5rqVQFPPW9eQKMI0
