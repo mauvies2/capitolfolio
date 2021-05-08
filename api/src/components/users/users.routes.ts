@@ -1,19 +1,17 @@
-import { Router } from 'express'
-import * as userCtrl from './users.controller'
+import { Router } from 'express';
+import auth from '../../middleware/auth';
+import * as userCtrl from './users.controller';
 
-const router = Router()
+const router = Router();
 
-router.get('/', userCtrl.getUsers)
+router.get('/', userCtrl.getUsers);
 
-router.get('/:id', userCtrl.getUser)
+// auth
 
-router.post('/', userCtrl.registerUser)
+router.get('/:id', auth, userCtrl.getUser);
 
-router.delete('/:id', userCtrl.deleteUser)
+router.delete('/:id', auth, userCtrl.deleteUser);
 
-router.put('/:id', userCtrl.updateUser)
+router.put('/:id', auth, userCtrl.updateUser);
 
-router.post('/login', userCtrl.loginUser)
-
-export default router
-
+export default router;
